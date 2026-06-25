@@ -11,7 +11,7 @@ export const directoryTiers = [
       'Name, contact, category & link',
     ],
     cta: 'Add a listing',
-    href: 'https://app.citydeskmarketing.com/auth/register',
+    href: 'https://app.citydeskmarketing.com/auth/register?intent=directory&tier=standard',
   },
   {
     id: 'featured',
@@ -25,6 +25,6 @@ export const directoryTiers = [
       'Sitewide exposure across the paper',
     ],
     cta: 'Go featured',
-    href: 'https://app.citydeskmarketing.com/auth/register',
+    href: 'https://app.citydeskmarketing.com/auth/register?intent=directory&tier=featured',
   },
 ] as const;
