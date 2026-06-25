@@ -13,14 +13,14 @@ import { cities } from '../data/cities';
 
     <div class="grid">
       {cities.map(c => (
-        <div class="card">
+        <a href={`https://${c.domain}`} target="_blank" rel="noopener noreferrer" class="card city-link">
           <div class="top-row">
             <span class="live-badge">&#9679; Live</span>
             <span class="sections">7 sections</span>
           </div>
           <div class="city-name">{c.name}</div>
           <div class="domain">{c.domain}</div>
-        </div>
+        </a>
       ))}
       <div class="card ink-card">
         <div class="ink-tag">In production</div>
@@ -69,6 +69,17 @@ import { cities } from '../data/cities';
     border-radius: var(--radius);
     padding: 24px;
   }
+  .city-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .city-link:hover {
+    box-shadow: 0 4px 16px -4px rgba(0,0,0,.18);
+    transform: translateY(-2px);
+  }
+  .city-link:hover .domain { text-decoration: underline; }
   .top-row {
     display: flex;
     align-items: center;

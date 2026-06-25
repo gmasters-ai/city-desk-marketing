@@ -29,7 +29,10 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; }
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+}
 body {
   background: var(--paper);
   color: var(--ink);
@@ -89,6 +92,7 @@ details summary::marker { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
