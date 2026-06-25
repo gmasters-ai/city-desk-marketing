@@ -1,45 +1,72 @@
 ---
 export interface Props {
-  dark?: boolean;
+  variant?: 'header' | 'footer';
 }
-const { dark = false } = Astro.props;
+const { variant = 'header' } = Astro.props;
 ---
-<a href="/" class:list={['logo', { dark }]} aria-label="CityDesk Marketing home">
-  <span class="wordmark">CityDesk</span>
-  <span class="rule" aria-hidden="true"></span>
-  <span class="sub">Marketing</span>
+<a href="/" class:list={['logo', variant]} aria-label="CityDesk Marketing home">
+  <div class="bar">
+    <span class="city">City</span><span class="desk">Desk</span>
+  </div>
+  <div class="sub">Marketing</div>
 </a>
 
 <style>
   .logo {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
     text-decoration: none;
-    color: inherit;
+    line-height: 1;
   }
-  .wordmark {
-    font-family: var(--f-display);
-    font-size: 27px;
-    letter-spacing: -0.01em;
-    color: var(--ink);
+
+  /* Gradient bar — same 3-stop formula as the city sites, red accent */
+  .bar {
+    display: inline-flex;
+    align-items: baseline;
+    padding: 8px 13px;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--red), #fff 16%) 0%,
+      var(--red) 46%,
+      color-mix(in srgb, var(--red), #000 30%) 100%
+    );
+    border-radius: 1px;
   }
-  .dark .wordmark { color: #F2ECDD; }
-  .rule {
-    display: inline-block;
-    width: 1px;
-    height: 22px;
-    background: #C8C0AD;
-    transform: translateY(4px);
-    flex-shrink: 0;
+  .city {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.025em;
+    color: #fff;
   }
-  .dark .rule { background: #4A443C; }
+  .desk {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.025em;
+    color: rgba(255,255,255,0.92);
+  }
+
+  /* "MARKETING" label */
   .sub {
     font-family: var(--f-mono);
-    font-size: 12px;
-    letter-spacing: 0.28em;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
     color: var(--red);
-    font-weight: 500;
+    padding-left: 2px;
+  }
+  .footer .sub { color: var(--red); }
+
+  /* Footer: slightly smaller */
+  .footer .city,
+  .footer .desk {
+    font-size: 22px;
+  }
+  .footer .bar {
+    padding: 7px 11px;
   }
 </style>

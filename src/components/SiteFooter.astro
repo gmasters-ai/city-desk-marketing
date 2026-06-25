@@ -1,13 +1,10 @@
 ---
+import Logo from './Logo.astro';
 ---
 <footer>
   <div class="container grid">
     <div class="brand">
-      <div class="logo-lockup">
-        <span class="wordmark">CityDesk</span>
-        <span class="rule" aria-hidden="true"></span>
-        <span class="sub">Marketing</span>
-      </div>
+      <Logo variant="footer" />
       <p class="blurb">Hyperlocal authority backlinks, published as real local news across the CityDesk network of city papers.</p>
     </div>
 
@@ -60,31 +57,8 @@
     gap: 40px;
     padding-block: 64px 40px;
   }
-  .logo-lockup {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
+  .brand :global(.logo) {
     margin-bottom: 16px;
-  }
-  .wordmark {
-    font-family: var(--f-display);
-    font-size: 26px;
-    color: #F2ECDD;
-  }
-  .rule {
-    display: inline-block;
-    width: 1px;
-    height: 20px;
-    background: #4A443C;
-    transform: translateY(3px);
-    flex-shrink: 0;
-  }
-  .sub {
-    font-family: var(--f-mono);
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--red);
   }
   .blurb {
     font-family: var(--f-serif);
