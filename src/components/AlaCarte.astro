@@ -8,29 +8,80 @@
       <input type="range" id="alc-range" min="1" max="500" value="50" aria-label="Number of articles" />
       <div class="qty-label" id="alc-label">50 articles</div>
     </div>
-    <p class="note">Flat $12 / article &middot; bundles bring it as low as $9</p>
+    <div class="tiers">
+      <div class="tier-row" id="tier-1-24">
+        <span class="tier-range">1–24</span>
+        <span class="tier-sep"></span>
+        <span class="tier-rate">$12 / article</span>
+      </div>
+      <div class="tier-row" id="tier-25-49">
+        <span class="tier-range">25–49</span>
+        <span class="tier-sep"></span>
+        <span class="tier-rate">$12 / article</span>
+      </div>
+      <div class="tier-row" id="tier-50-99">
+        <span class="tier-range">50–99</span>
+        <span class="tier-sep"></span>
+        <span class="tier-rate">$11 / article</span>
+      </div>
+      <div class="tier-row" id="tier-100-249">
+        <span class="tier-range">100–249</span>
+        <span class="tier-sep"></span>
+        <span class="tier-rate">$10 / article</span>
+      </div>
+      <div class="tier-row" id="tier-250">
+        <span class="tier-range">250+</span>
+        <span class="tier-sep"></span>
+        <span class="tier-rate">$9 / article</span>
+      </div>
+    </div>
   </div>
   <div class="right">
     <div class="est-label">Estimated total</div>
-    <div class="total" id="alc-total">$600</div>
+    <div class="total" id="alc-total">$550</div>
+    <div class="per-note" id="alc-per">$11 / article</div>
     <a href="#" class="cta" id="alc-cta">Order 50 articles</a>
   </div>
 </div>
 
 <script>
-  const range  = document.getElementById('alc-range') as HTMLInputElement;
-  const label  = document.getElementById('alc-label')!;
-  const total  = document.getElementById('alc-total')!;
-  const cta    = document.getElementById('alc-cta')!;
+  const range   = document.getElementById('alc-range') as HTMLInputElement;
+  const label   = document.getElementById('alc-label')!;
+  const total   = document.getElementById('alc-total')!;
+  const perNote = document.getElementById('alc-per')!;
+  const cta     = document.getElementById('alc-cta')!;
+
   const fmt    = (n: number) => '$' + n.toLocaleString('en-US');
   const plural = (n: number) => n + (n === 1 ? ' article' : ' articles');
 
-  function sync() {
-    const q = parseInt(range.value, 10);
-    label.textContent = plural(q);
-    total.textContent = fmt(q * 12);
-    cta.textContent   = 'Order ' + plural(q);
+  const tiers = [
+    { min: 1,   max: 24,  rate: 12, id: 'tier-1-24'   },
+    { min: 25,  max: 49,  rate: 12, id: 'tier-25-49'  },
+    { min: 50,  max: 99,  rate: 11, id: 'tier-50-99'  },
+    { min: 100, max: 249, rate: 10, id: 'tier-100-249' },
+    { min: 250, max: Infinity, rate: 9, id: 'tier-250' },
+  ];
+
+  function getRate(q: number) {
+    return tiers.find(t => q >= t.min && q <= t.max)!;
   }
+
+  function sync() {
+    const q    = parseInt(range.value, 10);
+    const tier = getRate(q);
+
+    label.textContent   = plural(q);
+    total.textContent   = fmt(q * tier.rate);
+    perNote.textContent = `$${tier.rate} / article`;
+    cta.textContent     = 'Order ' + plural(q);
+
+    // Highlight active tier row
+    tiers.forEach(t => {
+      const el = document.getElementById(t.id)!;
+      el.classList.toggle('active', t.id === tier.id);
+    });
+  }
+
   range.addEventListener('input', sync);
   sync();
 </script>
@@ -58,6 +109,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-bottom: 16px;
   }
   input[type=range] { flex: 1; }
   .qty-label {
@@ -66,12 +118,41 @@
     min-width: 96px;
     text-align: right;
   }
-  .note {
+
+  /* Tier table */
+  .tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .tier-row {
+    display: flex;
+    align-items: center;
+    padding: 7px 12px;
     font-family: var(--f-mono);
     font-size: 11.5px;
     color: var(--ink-mute);
-    margin: 12px 0 0;
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.12s, color 0.12s;
   }
+  .tier-row:last-child { border-bottom: none; }
+  .tier-range { min-width: 52px; }
+  .tier-sep {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    margin: 0 10px;
+  }
+  .tier-row.active {
+    background: var(--ink);
+    color: #F5F1E8;
+  }
+  .tier-row.active .tier-sep { background: rgba(255,255,255,0.2); }
+
+  /* Right column */
   .right {
     border-left: 1px solid var(--rule);
     padding-left: 44px;
@@ -81,10 +162,15 @@
     font-family: var(--f-display);
     font-size: 52px;
     line-height: 1;
-    margin-bottom: 18px;
+    margin-bottom: 4px;
+  }
+  .per-note {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-bottom: 20px;
   }
   .cta {
-    display: inline-block;
     background: var(--red);
     color: #fff;
     text-decoration: none;
