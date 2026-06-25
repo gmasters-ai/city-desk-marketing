@@ -23,7 +23,7 @@ import { directoryTiers } from '../data/directory';
           <ul class="feat-list">
             {t.features.map(f => <li set:html={f} />)}
           </ul>
-          <a href="#" class:list={['tier-cta', { 'cta-gold': t.featured }]}>{t.cta}</a>
+          <a href={t.href} class:list={['tier-cta', { 'cta-gold': t.featured }]}>{t.cta}</a>
         </div>
       ))}
     </div>

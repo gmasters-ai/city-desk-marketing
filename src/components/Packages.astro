@@ -27,7 +27,7 @@ const fmt = (n: number) => '$' + n.toLocaleString('en-US');
             <div class="per-article">${b.perArticle} / article</div>
           </div>
           <div class="spacer"></div>
-          <a href="#" class:list={['cta', { 'cta-red': b.popular }]}>Choose {b.name}</a>
+          <a href={b.href} class:list={['cta', { 'cta-red': b.popular }]}>Choose {b.name}</a>
         </div>
       ))}
     </div>
