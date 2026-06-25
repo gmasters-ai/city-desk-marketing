@@ -1,0 +1,138 @@
+---
+import { cities } from '../data/cities';
+---
+<section id="cities" class="section">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="kicker">The network</p>
+        <h2>Five city papers live today.<br>New markets every month.</h2>
+      </div>
+      <p class="sub">Every CityDesk paper runs real hyperlocal coverage across seven sections &mdash; the kind of site readers and search engines both trust.</p>
+    </div>
+
+    <div class="grid">
+      {cities.map(c => (
+        <div class="card">
+          <div class="top-row">
+            <span class="live-badge">&#9679; Live</span>
+            <span class="sections">7 sections</span>
+          </div>
+          <div class="city-name">{c.name}</div>
+          <div class="domain">{c.domain}</div>
+        </div>
+      ))}
+      <div class="card ink-card">
+        <div class="ink-tag">In production</div>
+        <div class="ink-title">More cities,<br>every month.</div>
+        <p class="ink-body">Need a specific market for a client? Ask us &mdash; we prioritize by demand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section { border-bottom: 1px solid var(--ink); }
+  .section .container { padding-block: 80px; }
+  .head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .sub {
+    font-family: var(--f-serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 21em;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .live-badge {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--live);
+  }
+  .sections {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: #8A8475;
+  }
+  .city-name {
+    font-family: var(--f-display);
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .domain {
+    font-family: var(--f-mono);
+    font-size: 12.5px;
+    color: var(--red);
+  }
+
+  /* Ink "more cities" card */
+  .ink-card {
+    background: var(--ink);
+    color: #F2ECDD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ink-tag {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .ink-title {
+    font-family: var(--f-display);
+    font-size: 24px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .ink-body {
+    font-size: 14px;
+    color: #B7AE99;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 960px) {
+    .head { flex-direction: column; align-items: flex-start; }
+    h2 { font-size: 34px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>

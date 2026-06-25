@@ -1,0 +1,92 @@
+---
+const steps = [
+  { num: '01', title: 'Open your free desk', body: 'Create an account in seconds and add a white-labeled workspace for each client you manage.' },
+  { num: '02', title: 'Choose volume', body: 'Pick a bundle or order any number of articles à la carte. Set your target URL and anchor.' },
+  { num: '03', title: 'We write & publish', body: 'Our local desks produce a genuine, on-topic article with your contextual link — on a real city paper.' },
+  { num: '04', title: 'Indexed & permanent', body: 'Live links land in your dashboard with URLs and dates. They stay published — no rentals, no expiry.' },
+];
+---
+<section id="how" class="section">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="kicker">The process</p>
+        <h2>From signup to indexed link<br>in four steps.</h2>
+      </div>
+      <p class="sub">Built for agencies running volume &mdash; white-labeled desks, predictable cadence, no outreach.</p>
+    </div>
+
+    <div class="grid">
+      {steps.map(s => (
+        <div class="step">
+          <div class="num">{s.num}</div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section { border-bottom: 1px solid var(--ink); }
+  .section .container { padding-block: 80px; }
+  .head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .sub {
+    font-family: var(--f-serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 22em;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .step { border-top: 2px solid var(--ink); padding-top: 22px; }
+  .num {
+    font-family: var(--f-display);
+    font-size: 40px;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  h3 {
+    font-family: var(--f-serif);
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 10px;
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  @media (max-width: 960px) {
+    .head { flex-direction: column; align-items: flex-start; }
+    h2 { font-size: 34px; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>

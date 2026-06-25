@@ -1,0 +1,121 @@
+---
+const faqs = [
+  {
+    q: 'Are these real articles on real websites?',
+    a: 'Yes. Every link is placed inside a genuine, original article published on a live CityDesk city newspaper with real hyperlocal coverage across seven sections — not a private blog network or a thin link farm.',
+  },
+  {
+    q: 'Do the links stay live permanently?',
+    a: 'Yes. Placements are permanent. Once an article is published it stays on the site and in your dashboard — there are no monthly rentals and nothing expires when your bundle ends.',
+  },
+  {
+    q: 'Can I set the target URL and anchor text?',
+    a: 'You set the target URL and preferred anchor for each order. Our editors place it contextually inside an on-topic article so it reads naturally and passes editorial review.',
+  },
+  {
+    q: 'How does this work for an agency with many clients?',
+    a: 'Each client gets its own white-labeled desk inside your account. Buy bundles or à la carte per client, track every placement in one dashboard, and export clean reports with live URLs and publish dates.',
+  },
+  {
+    q: 'How fast do articles get published?',
+    a: 'Bundles publish on a steady cadence — typically two to three articles per week — so links land naturally over time rather than all at once. À la carte orders enter the same publishing queue.',
+  },
+  {
+    q: 'How is the business directory different from backlinks?',
+    a: 'The directory is a separate annual product: a permanent listing for a business at $89/year, or $149/year for a Featured listing that also runs a banner in the sidebar of article pages across the paper. Backlinks are the editorial placements; the directory is an always-on presence.',
+  },
+];
+---
+<section id="faq" class="section">
+  <div class="container inner">
+    <div class="head">
+      <p class="kicker">Questions</p>
+      <h2>Everything agencies ask first.</h2>
+    </div>
+
+    <div class="accordion">
+      {faqs.map((f, i) => (
+        <details class="item" name="faq">
+          <summary>
+            <span class="q">{f.q}</span>
+            <span class="sign" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer">
+            <p>{f.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    background: var(--paper-alt);
+    border-bottom: 1px solid var(--ink);
+  }
+  .inner {
+    max-width: 860px;
+    margin-inline: auto;
+    padding-block: 80px;
+    padding-inline: var(--pad);
+  }
+  .head {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .item {
+    border-bottom: 1px solid #D6CEBC;
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  summary:hover .q { color: var(--red); }
+  .q {
+    font-family: var(--f-serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    transition: color 0.15s;
+  }
+  .sign {
+    font-family: var(--f-display);
+    font-size: 26px;
+    color: var(--red);
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  details[open] .sign {
+    transform: rotate(45deg);
+  }
+  .answer {
+    padding: 0 0 26px;
+    max-width: 60ch;
+  }
+  .answer p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    h2 { font-size: 32px; }
+    .q { font-size: 17px; }
+  }
+</style>

@@ -1,0 +1,144 @@
+---
+import Logo from './Logo.astro';
+---
+<header>
+  <div class="container inner">
+    <Logo />
+
+    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#how">How it works</a>
+      <a href="#packages">Packages</a>
+      <a href="#cities">Cities</a>
+      <a href="#directory">Directory</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="actions">
+      <a href="#" class="signin">Sign in</a>
+      <a href="#" class="cta-btn">Create free account</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const burger = document.getElementById('burger')!;
+  const nav = document.getElementById('main-nav')!;
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  // Close nav when a link is clicked
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(245,241,232,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink);
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 16px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+  nav a {
+    color: #3A352E;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  nav a:hover { color: var(--red); }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+  }
+  .signin {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .signin:hover { color: var(--red); }
+  .cta-btn {
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s;
+  }
+  .cta-btn:hover { background: var(--red-dark); }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  @media (max-width: 960px) {
+    .burger { display: flex; }
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--ink);
+      padding: 8px 0;
+    }
+    nav.open { display: flex; }
+    nav a {
+      width: 100%;
+      padding: 14px var(--pad);
+      border-bottom: 1px solid var(--rule);
+    }
+    nav a:last-child { border-bottom: none; }
+    .actions { gap: 12px; }
+    .signin { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .cta-btn { font-size: 13px; padding: 10px 14px; }
+  }
+</style>

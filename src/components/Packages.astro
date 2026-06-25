@@ -1,0 +1,175 @@
+---
+import { bundles } from '../data/packages';
+import AlaCarte from './AlaCarte.astro';
+
+const fmt = (n: number) => '$' + n.toLocaleString('en-US');
+---
+<section id="packages" class="section">
+  <div class="container">
+    <div class="head">
+      <p class="kicker">Backlink packages</p>
+      <h2>Buy by the bundle. The more you run,<br>the less you pay per article.</h2>
+      <p class="sub">Base rate <strong>$12 / article</strong> &middot; every bundle is published on a steady cadence so links land naturally.</p>
+    </div>
+
+    <div class="grid">
+      {bundles.map(b => (
+        <div class:list={['card', { popular: b.popular }]}>
+          {b.popular && <div class="badge">Most popular</div>}
+          <div class="name">{b.name}</div>
+          <div class="count-row">
+            <span class="count">{b.articles}</span>
+            <span class="count-unit">articles</span>
+          </div>
+          <div class="cadence">{b.cadence} &middot; {b.duration}</div>
+          <div class="price-block">
+            <div class="price">{fmt(b.total)}</div>
+            <div class="per-article">${b.perArticle} / article</div>
+          </div>
+          <div class="spacer"></div>
+          <a href="#" class:list={['cta', { 'cta-red': b.popular }]}>Choose {b.name}</a>
+        </div>
+      ))}
+    </div>
+
+    <AlaCarte />
+  </div>
+</section>
+
+<style>
+  .section {
+    background: var(--paper-alt);
+    border-bottom: 1px solid var(--ink);
+  }
+  .section .container { padding-block: 80px; }
+  .head {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+  }
+  .sub {
+    font-family: var(--f-serif);
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 48px;
+    align-items: stretch;
+  }
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .card.popular {
+    background: var(--ink);
+    color: #F2ECDD;
+    box-shadow: 0 20px 44px -24px rgba(0,0,0,.55);
+  }
+  .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: #fff;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+  .name {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 18px;
+  }
+  .popular .name { color: var(--gold); }
+  .count-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .count {
+    font-family: var(--f-display);
+    font-size: 46px;
+    line-height: 1;
+  }
+  .count-unit { font-size: 14px; color: var(--ink-mute); }
+  .popular .count-unit { color: #B7AE99; }
+  .cadence { font-size: 13.5px; color: var(--ink-mute); margin-bottom: 22px; }
+  .popular .cadence { color: #B7AE99; }
+  .price-block {
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+    margin-bottom: 6px;
+  }
+  .popular .price-block { border-top-color: #3A352E; }
+  .price {
+    font-family: var(--f-display);
+    font-size: 34px;
+  }
+  .per-article {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-top: 4px;
+  }
+  .popular .per-article { color: #B7AE99; }
+  .spacer { flex: 1; }
+  .cta {
+    margin-top: 22px;
+    text-align: center;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 13px;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid var(--ink);
+    transition: background 0.15s, color 0.15s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta:hover { background: var(--ink); color: var(--paper); }
+  .cta.cta-red {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+    font-weight: 700;
+  }
+  .cta.cta-red:hover { background: #D9543F; border-color: #D9543F; }
+
+  @media (max-width: 960px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    h2 { font-size: 34px; }
+    h2 br { display: none; }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>

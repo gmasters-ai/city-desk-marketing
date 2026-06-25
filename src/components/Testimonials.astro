@@ -1,0 +1,73 @@
+---
+const quotes = [
+  { text: 'The cadence is what sells our clients — links land like clockwork and the reports write themselves.', name: '[Name], [Agency]', role: 'SEO Lead' },
+  { text: "Real articles on real local sites. Our clients can actually read the placement — that's rare.", name: '[Name], [Agency]', role: 'Founder' },
+  { text: 'We moved three clients onto the Agency plan and the per-article price made it an easy call.', name: '[Name], [Agency]', role: 'Director of Search' },
+];
+---
+<section class="section">
+  <div class="container">
+    <div class="head">
+      <p class="kicker">From the desk of our agencies</p>
+      <span class="placeholder-tag" aria-label="Placeholder content">Placeholder</span>
+    </div>
+    <div class="grid">
+      {quotes.map(q => (
+        <figure class="quote">
+          <blockquote>&ldquo;{q.text}&rdquo;</blockquote>
+          <figcaption>
+            <strong>{q.name}</strong><br />
+            <span class="role">{q.role}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section { border-bottom: 1px solid var(--ink); }
+  .section .container { padding-block: 80px; }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .placeholder-tag {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #B7AE99;
+    padding: 3px 8px;
+    border-radius: var(--radius);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .quote {
+    margin: 0;
+    border-top: 2px solid var(--ink);
+    padding-top: 24px;
+  }
+  blockquote {
+    font-family: var(--f-serif);
+    font-size: 21px;
+    line-height: 1.45;
+    margin: 0 0 22px;
+  }
+  figcaption {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .role { color: #8A8475; }
+
+  @media (max-width: 960px) {
+    .grid { grid-template-columns: 1fr; gap: 32px; }
+    blockquote { font-size: 18px; }
+  }
+</style>

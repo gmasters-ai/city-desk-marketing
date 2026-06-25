@@ -1,0 +1,45 @@
+---
+export interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+<a href="/" class:list={['logo', { dark }]} aria-label="CityDesk Marketing home">
+  <span class="wordmark">CityDesk</span>
+  <span class="rule" aria-hidden="true"></span>
+  <span class="sub">Marketing</span>
+</a>
+
+<style>
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .wordmark {
+    font-family: var(--f-display);
+    font-size: 27px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .dark .wordmark { color: #F2ECDD; }
+  .rule {
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background: #C8C0AD;
+    transform: translateY(4px);
+    flex-shrink: 0;
+  }
+  .dark .rule { background: #4A443C; }
+  .sub {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+  }
+</style>

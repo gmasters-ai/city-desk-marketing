@@ -1,0 +1,163 @@
+---
+import { directoryTiers } from '../data/directory';
+---
+<section id="directory" class="section">
+  <div class="container inner">
+    <div class="intro">
+      <p class="kicker">Also available</p>
+      <h2>The CityDesk<br>Business Directory.</h2>
+      <p class="desc">List a business across the network for a permanent, indexed directory profile. A simple add-on for clients who want a steady local presence beyond articles.</p>
+      <p class="note">Billed annually, per business. Add or remove listings any time from your desk.</p>
+    </div>
+
+    <div class="tiers">
+      {directoryTiers.map(t => (
+        <div class:list={['tier', { featured: t.featured }]}>
+          {t.featured && <div class="feat-badge">Featured</div>}
+          <div class="tier-name">{t.name}</div>
+          <div class="price-row">
+            <span class="price">${t.price}</span>
+            <span class="per">/ year</span>
+          </div>
+          <div class="per-biz">per business</div>
+          <ul class="feat-list">
+            {t.features.map(f => <li set:html={f} />)}
+          </ul>
+          <a href="#" class:list={['tier-cta', { 'cta-gold': t.featured }]}>{t.cta}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    background: var(--navy);
+    color: #E7EDF3;
+    border-bottom: 1px solid var(--ink);
+  }
+  .inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+    padding-block: 76px;
+  }
+  .kicker { color: var(--gold); margin: 0 0 16px; }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+  .desc {
+    font-family: var(--f-serif);
+    font-size: 17px;
+    line-height: 1.6;
+    color: #B9C4D0;
+    margin: 0 0 16px;
+  }
+  .note {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #8FA0B2;
+    margin: 0;
+  }
+  .tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .tier {
+    background: var(--navy-card);
+    border: 1px solid #36495C;
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .tier.featured { border-color: var(--gold); }
+  .feat-badge {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: var(--radius);
+    font-weight: 600;
+  }
+  .tier-name {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8FA0B2;
+    margin-bottom: 18px;
+  }
+  .tier.featured .tier-name { color: var(--gold); }
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .price {
+    font-family: var(--f-display);
+    font-size: 42px;
+    line-height: 1;
+  }
+  .per { font-size: 14px; color: #8FA0B2; }
+  .per-biz { font-size: 13px; color: #8FA0B2; margin-bottom: 20px; }
+  .feat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #D4DCE4;
+    flex: 1;
+  }
+  .tier-cta {
+    display: block;
+    text-align: center;
+    background: transparent;
+    color: #E7EDF3;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: var(--radius);
+    font-size: 14.5px;
+    font-weight: 600;
+    border: 1px solid #5A6C7E;
+    transition: background 0.15s, color 0.15s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tier-cta:hover { background: #E7EDF3; color: var(--navy); }
+  .tier-cta.cta-gold {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+    font-weight: 700;
+  }
+  .tier-cta.cta-gold:hover { background: #F0B658; border-color: #F0B658; }
+
+  @media (max-width: 960px) {
+    .inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+  @media (max-width: 600px) {
+    .tiers { grid-template-columns: 1fr; }
+  }
+</style>

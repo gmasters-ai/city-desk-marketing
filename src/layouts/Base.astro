@@ -1,0 +1,72 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = 'CityDesk Marketing — Authority Backlinks Published as Real Local News',
+  description = 'CityDesk places your clients inside genuine hyperlocal newspapers — contextual, indexed, and permanent backlinks for agencies. Buy in bulk, scale across markets.',
+  canonical = 'https://citydeskmarketing.com/',
+} = Astro.props;
+
+const ogImage = 'https://citydeskmarketing.com/og.png';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "CityDesk Marketing",
+        "url": "https://citydeskmarketing.com",
+        "logo": "https://citydeskmarketing.com/favicon.svg",
+        "description": description,
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "CityDesk Backlink Packages",
+        "url": "https://citydeskmarketing.com/#packages",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Starter — 25 articles", "price": "300", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Growth — 50 articles", "price": "550", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Authority — 100 articles", "price": "1000", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Agency — 250 articles", "price": "2250", "priceCurrency": "USD" },
+        ]
+      }
+    ]
+  })} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+  <slot />
+</body>
+</html>

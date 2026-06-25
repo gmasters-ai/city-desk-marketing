@@ -1,0 +1,172 @@
+---
+---
+<footer>
+  <div class="container grid">
+    <div class="brand">
+      <div class="logo-lockup">
+        <span class="wordmark">CityDesk</span>
+        <span class="rule" aria-hidden="true"></span>
+        <span class="sub">Marketing</span>
+      </div>
+      <p class="blurb">Hyperlocal authority backlinks, published as real local news across the CityDesk network of city papers.</p>
+    </div>
+
+    <nav aria-label="Product links">
+      <h3>Product</h3>
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#packages">Backlink packages</a></li>
+        <li><a href="#cities">Cities</a></li>
+        <li><a href="#directory">Business directory</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Company links">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Editorial standards</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="get-started">
+      <h3>Get started</h3>
+      <a href="#" class="cta-btn">Create free account</a>
+      <a href="#" class="signin-link">Sign in</a>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="container bottom-inner">
+      <span>&copy; 2026 CityDesk Marketing. All rights reserved.</span>
+      <span class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--ink);
+    color: #B7AE99;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-block: 64px 40px;
+  }
+  .logo-lockup {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .wordmark {
+    font-family: var(--f-display);
+    font-size: 26px;
+    color: #F2ECDD;
+  }
+  .rule {
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background: #4A443C;
+    transform: translateY(3px);
+    flex-shrink: 0;
+  }
+  .sub {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .blurb {
+    font-family: var(--f-serif);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #8A8475;
+    max-width: 30em;
+    margin: 0;
+  }
+  h3 {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6B6457;
+    margin: 0 0 16px;
+    font-weight: 400;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 2.1;
+  }
+  ul a {
+    color: #B7AE99;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  ul a:hover { color: #fff; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    transition: background 0.15s;
+  }
+  .cta-btn:hover { background: var(--red-dark); }
+  .signin-link {
+    display: block;
+    color: #B7AE99;
+    text-decoration: none;
+    font-size: 14.5px;
+    transition: color 0.15s;
+  }
+  .signin-link:hover { color: #fff; }
+  .bottom {
+    border-top: 1px solid #2E2922;
+  }
+  .bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 22px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: #6B6457;
+  }
+  .legal {
+    display: flex;
+    gap: 24px;
+  }
+  .legal a {
+    color: #6B6457;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .legal a:hover { color: #B7AE99; }
+
+  @media (max-width: 960px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .bottom-inner { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>

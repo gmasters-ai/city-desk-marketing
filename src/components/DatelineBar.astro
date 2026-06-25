@@ -1,0 +1,37 @@
+---
+const date = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+---
+<div class="dateline">
+  <div class="container inner">
+    <span>{date}</span>
+    <span class="tagline">Hyperlocal Authority &middot; Built for Agencies</span>
+    <span class="live">&#9679; 5 City Papers Live</span>
+  </div>
+</div>
+
+<style>
+  .dateline {
+    background: var(--ink);
+    color: #E8E2D4;
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 7px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .tagline { color: #B7AE99; letter-spacing: 0.2em; }
+  .live { color: var(--gold); }
+
+  @media (max-width: 960px) {
+    .tagline { display: none; }
+    .inner { justify-content: space-between; }
+  }
+  @media (max-width: 600px) {
+    .dateline { display: none; }
+  }
+</style>

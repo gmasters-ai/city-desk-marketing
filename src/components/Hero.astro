@@ -1,0 +1,126 @@
+---
+import ClippingMock from './ClippingMock.astro';
+---
+<section class="hero">
+  <div class="container inner">
+    <div class="copy">
+      <p class="kicker">
+        <span class="kicker-rule" aria-hidden="true"></span>
+        Hyperlocal link building for agencies
+      </p>
+      <h1>Authority backlinks,<br>published as real<br>local news.</h1>
+      <p class="lede">
+        CityDesk places your clients inside genuine hyperlocal newspapers &mdash; contextual,
+        indexed, and permanent. Buy in bulk, scale across markets, and run every client from one desk.
+      </p>
+      <div class="ctas">
+        <a href="#" class="btn-primary">Create a free account</a>
+        <a href="#packages" class="btn-secondary">See backlink packages</a>
+      </div>
+      <p class="micro">No card to start &nbsp;&middot;&nbsp; 5 city papers live &nbsp;&middot;&nbsp; New markets every month</p>
+    </div>
+    <div class="mock-col">
+      <ClippingMock />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { border-bottom: 1px solid var(--ink); }
+  .inner {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 64px;
+    align-items: center;
+    padding-block: 72px 80px;
+  }
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 22px;
+  }
+  .kicker-rule {
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+  h1 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+  }
+  .lede {
+    font-family: var(--f-serif);
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 34px;
+    max-width: 30em;
+  }
+  .ctas {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 700;
+    transition: background 0.15s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid var(--ink);
+    transition: background 0.15s, color 0.15s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+  .micro {
+    font-family: var(--f-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    margin: 0;
+  }
+
+  @media (max-width: 960px) {
+    .inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding-block: 56px;
+    }
+    h1 { font-size: 46px; }
+    .lede { font-size: 18px; }
+    .mock-col { max-width: 480px; }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 36px; }
+    .ctas { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  }
+</style>

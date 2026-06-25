@@ -1,0 +1,58 @@
+---
+import { cities } from '../data/cities';
+---
+<section class="strip">
+  <div class="container inner">
+    <span class="label">Published across the network</span>
+    <div class="cities">
+      {cities.map(c => <span>{c.name}</span>)}
+    </div>
+    <span class="more">+ more soon</span>
+  </div>
+</section>
+
+<style>
+  .strip {
+    background: var(--ink);
+    color: #E8E2D4;
+    border-bottom: 1px solid var(--ink);
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding-block: 26px;
+    flex-wrap: wrap;
+  }
+  .label {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #B7AE99;
+    flex-shrink: 0;
+  }
+  .cities {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    flex-wrap: wrap;
+    font-family: var(--f-display);
+    font-size: 19px;
+  }
+  .more {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 960px) {
+    .inner { justify-content: center; text-align: center; }
+    .label { width: 100%; text-align: center; }
+    .cities { justify-content: center; gap: 20px; font-size: 16px; }
+    .more { width: 100%; text-align: center; }
+  }
+</style>

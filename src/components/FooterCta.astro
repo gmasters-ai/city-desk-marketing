@@ -1,0 +1,76 @@
+---
+---
+<section class="section">
+  <div class="container inner">
+    <h2>Open your free desk today.</h2>
+    <p class="sub">Set up a workspace, add your first client, and buy your first links in minutes.</p>
+    <div class="ctas">
+      <a href="#" class="btn-ink">Create a free account</a>
+      <a href="#packages" class="btn-outline">View packages</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section { background: var(--red); color: #fff; }
+  .inner {
+    padding-block: 76px;
+    text-align: center;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+  }
+  .sub {
+    font-family: var(--f-serif);
+    font-size: 19px;
+    color: #FCE3DC;
+    margin: 0 0 32px;
+  }
+  .ctas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-ink {
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 700;
+    transition: background 0.15s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .btn-ink:hover { background: #000; }
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.6);
+    transition: background 0.15s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+  @media (max-width: 600px) {
+    h2 { font-size: 36px; }
+    .ctas { flex-direction: column; align-items: center; }
+    .btn-ink, .btn-outline { width: 100%; justify-content: center; }
+  }
+</style>

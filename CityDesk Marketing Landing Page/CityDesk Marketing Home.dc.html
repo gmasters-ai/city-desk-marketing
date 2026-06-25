@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: #F5F1E8; color: #1B1815; font-family: "Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: #C2402E; color: #fff; }
+  input[type=range] { -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; outline: none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #C2402E; border: 3px solid #F5F1E8; box-shadow: 0 1px 4px rgba(0,0,0,.3); cursor: pointer; }
+  input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #C2402E; border: 3px solid #F5F1E8; cursor: pointer; }
+</style>
+</helmet>
+
+<div style="overflow-x: hidden;">
+
+  <!-- DATELINE STRIP -->
+  <div style="background: #1B1815; color: #E8E2D4;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 7px 32px; display: flex; align-items: center; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
+      <span>Thursday, June 25, 2026</span>
+      <span style="color: #B7AE99; letter-spacing: 0.2em;">Hyperlocal Authority &middot; Built for Agencies</span>
+      <span style="color: #E0A23C;">&#9679; 5 City Papers Live</span>
+    </div>
+  </div>
+
+  <!-- MASTHEAD / NAV -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(245,241,232,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: baseline; gap: 12px;">
+        <span style="font-family: 'Libre Caslon Display', serif; font-size: 27px; letter-spacing: -0.01em;">CityDesk</span>
+        <span style="display: inline-block; width: 1px; height: 22px; background: #C8C0AD; transform: translateY(4px);"></span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: #C2402E; font-weight: 500;">Marketing</span>
+      </a>
+      <nav style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; font-weight: 500;">
+        <a href="#how" style="color: #3A352E; text-decoration: none;" style-hover="color: #C2402E;">How it works</a>
+        <a href="#packages" style="color: #3A352E; text-decoration: none;" style-hover="color: #C2402E;">Packages</a>
+        <a href="#cities" style="color: #3A352E; text-decoration: none;" style-hover="color: #C2402E;">Cities</a>
+        <a href="#directory" style="color: #3A352E; text-decoration: none;" style-hover="color: #C2402E;">Directory</a>
+        <a href="#faq" style="color: #3A352E; text-decoration: none;" style-hover="color: #C2402E;">FAQ</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 18px;">
+        <a href="#" style="color: #1B1815; text-decoration: none; font-size: 14.5px; font-weight: 600;">Sign in</a>
+        <a href="#" style="background: #C2402E; color: #fff; text-decoration: none; padding: 11px 20px; border-radius: 2px; font-size: 14px; font-weight: 600;" style-hover="background: #9E3122;">Create free account</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 72px 32px 80px; display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 64px; align-items: center;">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C2402E; margin-bottom: 22px; display: flex; align-items: center; gap: 10px;">
+          <span style="display: inline-block; width: 28px; height: 1px; background: #C2402E;"></span>
+          Hyperlocal link building for agencies
+        </div>
+        <h1 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.015em; margin: 0 0 24px;">
+          Authority backlinks,<br>published as real<br>local news.
+        </h1>
+        <p style="font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.55; color: #4A443C; margin: 0 0 34px; max-width: 30em;">
+          CityDesk places your clients inside genuine hyperlocal newspapers &mdash; contextual, indexed, and permanent. Buy in bulk, scale across markets, and run every client from one desk.
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 26px;">
+          <a href="#" style="background: #C2402E; color: #fff; text-decoration: none; padding: 16px 30px; border-radius: 2px; font-size: 16px; font-weight: 700;" style-hover="background: #9E3122;">Create a free account</a>
+          <a href="#packages" style="background: transparent; color: #1B1815; text-decoration: none; padding: 15px 28px; border-radius: 2px; font-size: 16px; font-weight: 600; border: 1px solid #1B1815;" style-hover="background: #1B1815; color: #F5F1E8;">See backlink packages</a>
+        </div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em; color: #6B6457;">
+          No card to start &nbsp;&middot;&nbsp; 5 city papers live &nbsp;&middot;&nbsp; New markets every month
+        </div>
+      </div>
+
+      <!-- HERO CLIPPING MOCK -->
+      <div style="position: relative;">
+        <div style="position: absolute; inset: 18px -10px -16px 26px; background: #1B1815; border-radius: 3px;"></div>
+        <div style="position: relative; background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 26px 28px 28px; box-shadow: 0 18px 40px -22px rgba(0,0,0,.45);">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid #1B1815; padding-bottom: 10px; margin-bottom: 14px;">
+            <span style="font-family: 'Libre Caslon Display', serif; font-size: 18px;">CityDesk Austin</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6457;">Home &amp; Property</span>
+          </div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8475; margin-bottom: 10px;">By Marcus Webb &middot; Jun 22, 2026</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 600; font-size: 25px; line-height: 1.18; margin: 0 0 14px;">How Austin Homeowners Are Cutting Summer Cooling Bills in 2026</h3>
+          <p style="font-family: 'Newsreader', serif; font-size: 15px; line-height: 1.62; color: #3A352E; margin: 0 0 12px;">
+            With July highs creeping past 100&deg;, local pros say the fix usually isn't a new unit. Several Travis County crews now offer same-week tune-ups, and homeowners we spoke with rate
+            <a href="#" style="color: #C2402E; font-weight: 600; text-decoration: none; border-bottom: 2px solid #E7B7AC; padding-bottom: 1px; position: relative;">Lone Star HVAC &amp; Air</a>
+            for transparent flat-rate pricing across the metro.
+          </p>
+          <p style="font-family: 'Newsreader', serif; font-size: 15px; line-height: 1.62; color: #3A352E; margin: 0;">
+            The difference, technicians told us, comes down to airflow and refrigerant charge &mdash; not horsepower.
+          </p>
+          <div style="margin-top: 18px; display: inline-flex; align-items: center; gap: 8px; background: #1B1815; color: #F5F1E8; padding: 7px 12px; border-radius: 2px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;">
+            <span style="color: #E0A23C;">&#11045;</span> Your client&rsquo;s contextual link
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK TRUST STRIP -->
+  <section style="background: #1B1815; color: #E8E2D4; border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 26px 32px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #B7AE99;">Published across the network</span>
+      <div style="display: flex; align-items: center; gap: 34px; flex-wrap: wrap; font-family: 'Libre Caslon Display', serif; font-size: 19px;">
+        <span>CityDesk Austin</span>
+        <span>CityDesk Denver</span>
+        <span>CityDesk Houston</span>
+        <span>CityDesk Indianapolis</span>
+        <span>CityDesk Orlando</span>
+      </div>
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; color: #E0A23C;">+ more soon</span>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 48px;">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C2402E; margin-bottom: 16px;">The process</div>
+          <h2 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: -0.01em; margin: 0;">From signup to indexed link<br>in four steps.</h2>
+        </div>
+        <p style="font-family: 'Newsreader', serif; font-size: 17px; line-height: 1.55; color: #4A443C; max-width: 22em; margin: 0;">Built for agencies running volume &mdash; white-labeled desks, predictable cadence, no outreach.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;">
+        <div style="border-top: 2px solid #1B1815; padding-top: 22px;">
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 40px; color: #C2402E; line-height: 1; margin-bottom: 18px;">01</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 600; font-size: 21px; margin: 0 0 10px;">Open your free desk</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A443C; margin: 0;">Create an account in seconds and add a white-labeled workspace for each client you manage.</p>
+        </div>
+        <div style="border-top: 2px solid #1B1815; padding-top: 22px;">
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 40px; color: #C2402E; line-height: 1; margin-bottom: 18px;">02</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 600; font-size: 21px; margin: 0 0 10px;">Choose volume</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A443C; margin: 0;">Pick a bundle or order any number of articles &agrave; la carte. Set your target URL and anchor.</p>
+        </div>
+        <div style="border-top: 2px solid #1B1815; padding-top: 22px;">
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 40px; color: #C2402E; line-height: 1; margin-bottom: 18px;">03</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 600; font-size: 21px; margin: 0 0 10px;">We write &amp; publish</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A443C; margin: 0;">Our local desks produce a genuine, on-topic article with your contextual link &mdash; on a real city paper.</p>
+        </div>
+        <div style="border-top: 2px solid #1B1815; padding-top: 22px;">
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 40px; color: #C2402E; line-height: 1; margin-bottom: 18px;">04</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 600; font-size: 21px; margin: 0 0 10px;">Indexed &amp; permanent</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A443C; margin: 0;">Live links land in your dashboard with URLs and dates. They stay published &mdash; no rentals, no expiry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="background: #EFE9DB; border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px;">
+      <div style="text-align: center; margin-bottom: 14px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C2402E; margin-bottom: 16px;">Backlink packages</div>
+        <h2 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 14px;">Buy by the bundle. The more you run,<br>the less you pay per article.</h2>
+        <p style="font-family: 'Newsreader', serif; font-size: 17px; color: #4A443C; margin: 0;">Base rate <strong>$12 / article</strong> &middot; every bundle is published on a steady cadence so links land naturally.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; align-items: stretch;">
+
+        <!-- Starter -->
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 28px 24px; display: flex; flex-direction: column;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #6B6457; margin-bottom: 18px;">Starter</div>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 46px; line-height: 1;">25</span><span style="font-size: 14px; color: #6B6457;">articles</span></div>
+          <div style="font-size: 13.5px; color: #6B6457; margin-bottom: 22px;">2&times; / week &middot; ~3 months</div>
+          <div style="border-top: 1px solid #DED7C7; padding-top: 18px; margin-bottom: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 34px;">$300</span></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6457; margin-top: 4px;">$12 / article</div>
+          </div>
+          <div style="flex: 1;"></div>
+          <a href="#" style="margin-top: 22px; text-align: center; background: transparent; color: #1B1815; text-decoration: none; padding: 13px; border-radius: 2px; font-size: 15px; font-weight: 600; border: 1px solid #1B1815;" style-hover="background: #1B1815; color: #F5F1E8;">Choose Starter</a>
+        </div>
+
+        <!-- Growth -->
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 28px 24px; display: flex; flex-direction: column;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #6B6457; margin-bottom: 18px;">Growth</div>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 46px; line-height: 1;">50</span><span style="font-size: 14px; color: #6B6457;">articles</span></div>
+          <div style="font-size: 13.5px; color: #6B6457; margin-bottom: 22px;">2&times; / week &middot; ~6 months</div>
+          <div style="border-top: 1px solid #DED7C7; padding-top: 18px; margin-bottom: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 34px;">$550</span></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6457; margin-top: 4px;">$11 / article</div>
+          </div>
+          <div style="flex: 1;"></div>
+          <a href="#" style="margin-top: 22px; text-align: center; background: transparent; color: #1B1815; text-decoration: none; padding: 13px; border-radius: 2px; font-size: 15px; font-weight: 600; border: 1px solid #1B1815;" style-hover="background: #1B1815; color: #F5F1E8;">Choose Growth</a>
+        </div>
+
+        <!-- Authority (featured) -->
+        <div style="background: #1B1815; color: #F2ECDD; border: 1px solid #1B1815; border-radius: 3px; padding: 28px 24px; display: flex; flex-direction: column; position: relative; box-shadow: 0 20px 44px -24px rgba(0,0,0,.55);">
+          <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #C2402E; color: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; white-space: nowrap;">Most popular</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #E0A23C; margin-bottom: 18px;">Authority</div>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 46px; line-height: 1;">100</span><span style="font-size: 14px; color: #B7AE99;">articles</span></div>
+          <div style="font-size: 13.5px; color: #B7AE99; margin-bottom: 22px;">2&times; / week &middot; ~12 months</div>
+          <div style="border-top: 1px solid #3A352E; padding-top: 18px; margin-bottom: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 34px;">$1,000</span></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #B7AE99; margin-top: 4px;">$10 / article</div>
+          </div>
+          <div style="flex: 1;"></div>
+          <a href="#" style="margin-top: 22px; text-align: center; background: #C2402E; color: #fff; text-decoration: none; padding: 13px; border-radius: 2px; font-size: 15px; font-weight: 700;" style-hover="background: #D9543F;">Choose Authority</a>
+        </div>
+
+        <!-- Agency -->
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 28px 24px; display: flex; flex-direction: column;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #6B6457; margin-bottom: 18px;">Agency</div>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 46px; line-height: 1;">250</span><span style="font-size: 14px; color: #6B6457;">articles</span></div>
+          <div style="font-size: 13.5px; color: #6B6457; margin-bottom: 22px;">3&times; / week &middot; ~12 months</div>
+          <div style="border-top: 1px solid #DED7C7; padding-top: 18px; margin-bottom: 6px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 34px;">$2,250</span></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6457; margin-top: 4px;">$9 / article</div>
+          </div>
+          <div style="flex: 1;"></div>
+          <a href="#" style="margin-top: 22px; text-align: center; background: transparent; color: #1B1815; text-decoration: none; padding: 13px; border-radius: 2px; font-size: 15px; font-weight: 600; border: 1px solid #1B1815;" style-hover="background: #1B1815; color: #F5F1E8;">Choose Agency</a>
+        </div>
+      </div>
+
+      <!-- A LA CARTE CALCULATOR -->
+      <div style="margin-top: 34px; background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 30px 34px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: center;">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #C2402E; margin-bottom: 10px;">Buy à la carte</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 600; font-size: 24px; margin: 0 0 18px;">Need a custom volume? Order any number of articles.</h3>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <input type="range" min="1" max="500" value="{{ qty }}" onInput="{{ onQty }}" style="flex: 1; background: #DED7C7;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; min-width: 96px; text-align: right;">{{ qtyLabel }}</div>
+          </div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #6B6457; margin-top: 12px;">Flat $12 / article &middot; bundles bring it as low as $9</div>
+        </div>
+        <div style="border-left: 1px solid #DED7C7; padding-left: 44px;">
+          <div style="font-size: 13px; color: #6B6457; margin-bottom: 6px;">Estimated total</div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 52px; line-height: 1; margin-bottom: 18px;">{{ qtyTotal }}</div>
+          <a href="#" style="display: inline-block; background: #C2402E; color: #fff; text-decoration: none; padding: 13px 26px; border-radius: 2px; font-size: 15px; font-weight: 700;" style-hover="background: #9E3122;">Order {{ qtyLabel }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITIES -->
+  <section id="cities" style="border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px;">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C2402E; margin-bottom: 16px;">The network</div>
+          <h2 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: -0.01em; margin: 0;">Five city papers live today.<br>New markets every month.</h2>
+        </div>
+        <p style="font-family: 'Newsreader', serif; font-size: 17px; line-height: 1.55; color: #4A443C; max-width: 21em; margin: 0;">Every CityDesk paper runs real hyperlocal coverage across seven sections &mdash; the kind of site readers and search engines both trust.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B8A4B;">&#9679; Live</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8475;">7 sections</span>
+          </div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 24px; margin-bottom: 4px;">CityDesk Austin</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C2402E;">citydeskaustin.com</div>
+        </div>
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B8A4B;">&#9679; Live</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8475;">7 sections</span>
+          </div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 24px; margin-bottom: 4px;">CityDesk Denver</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C2402E;">citydeskdenver.com</div>
+        </div>
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B8A4B;">&#9679; Live</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8475;">7 sections</span>
+          </div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 24px; margin-bottom: 4px;">CityDesk Houston</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C2402E;">citydeskhouston.com</div>
+        </div>
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B8A4B;">&#9679; Live</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8475;">7 sections</span>
+          </div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 24px; margin-bottom: 4px;">CityDesk Indianapolis</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C2402E;">citydeskindianapolis.com</div>
+        </div>
+        <div style="background: #FCFAF4; border: 1px solid #1B1815; border-radius: 3px; padding: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #1B8A4B;">&#9679; Live</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8475;">7 sections</span>
+          </div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 24px; margin-bottom: 4px;">CityDesk Orlando</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C2402E;">citydeskorlando.com</div>
+        </div>
+        <div style="background: #1B1815; color: #F2ECDD; border: 1px solid #1B1815; border-radius: 3px; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #E0A23C; margin-bottom: 12px;">In production</div>
+          <div style="font-family: 'Libre Caslon Display', serif; font-size: 24px; line-height: 1.15;">More cities,<br>every month.</div>
+          <div style="font-size: 14px; color: #B7AE99; margin-top: 10px;">Need a specific market for a client? Ask us &mdash; we prioritize by demand.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTORY (secondary, dark) -->
+  <section id="directory" style="background: #1C2B3A; color: #E7EDF3; border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 76px 32px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center;">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #E0A23C; margin-bottom: 16px;">Also available</div>
+        <h2 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 18px;">The CityDesk<br>Business Directory.</h2>
+        <p style="font-family: 'Newsreader', serif; font-size: 17px; line-height: 1.6; color: #B9C4D0; margin: 0 0 16px;">List a business across the network for a permanent, indexed directory profile. A simple add-on for clients who want a steady local presence beyond articles.</p>
+        <p style="font-size: 14.5px; line-height: 1.6; color: #8FA0B2; margin: 0;">Billed annually, per business. Add or remove listings any time from your desk.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div style="background: #243748; border: 1px solid #36495C; border-radius: 3px; padding: 26px 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8FA0B2; margin-bottom: 18px;">Standard listing</div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 42px; line-height: 1;">$89</span><span style="font-size: 14px; color: #8FA0B2;">/ year</span></div>
+          <div style="font-size: 13px; color: #8FA0B2; margin-bottom: 20px;">per business</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 22px; font-size: 14px; line-height: 1.9; color: #D4DCE4;">
+            <li>Profile in the network directory</li>
+            <li>Indexed, permanent listing</li>
+            <li>Name, contact, category &amp; link</li>
+          </ul>
+          <a href="#" style="display: block; text-align: center; background: transparent; color: #E7EDF3; text-decoration: none; padding: 12px; border-radius: 2px; font-size: 14.5px; font-weight: 600; border: 1px solid #5A6C7E;" style-hover="background: #E7EDF3; color: #1C2B3A;">Add a listing</a>
+        </div>
+        <div style="background: #243748; border: 1px solid #E0A23C; border-radius: 3px; padding: 26px 24px; position: relative;">
+          <div style="position: absolute; top: -12px; left: 24px; background: #E0A23C; color: #1C2B3A; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 11px; border-radius: 2px; font-weight: 600;">Featured</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #E0A23C; margin-bottom: 18px;">Featured listing</div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px;"><span style="font-family: 'Libre Caslon Display', serif; font-size: 42px; line-height: 1;">$149</span><span style="font-size: 14px; color: #8FA0B2;">/ year</span></div>
+          <div style="font-size: 13px; color: #8FA0B2; margin-bottom: 20px;">per business</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 22px; font-size: 14px; line-height: 1.9; color: #D4DCE4;">
+            <li>Everything in Standard</li>
+            <li><strong style="color: #fff;">Sidebar banner</strong> on article pages</li>
+            <li>Sitewide exposure across the paper</li>
+          </ul>
+          <a href="#" style="display: block; text-align: center; background: #E0A23C; color: #1C2B3A; text-decoration: none; padding: 12px; border-radius: 2px; font-size: 14.5px; font-weight: 700;" style-hover="background: #F0B658;">Go featured</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px;">
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 40px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C2402E;">From the desk of our agencies</div>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: #B7AE99; padding: 3px 8px; border-radius: 2px;">Placeholder</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <figure style="margin: 0; border-top: 2px solid #1B1815; padding-top: 24px;">
+          <blockquote style="font-family: 'Newsreader', serif; font-size: 21px; line-height: 1.45; margin: 0 0 22px;">&ldquo;The cadence is what sells our clients &mdash; links land like clockwork and the reports write themselves.&rdquo;</blockquote>
+          <figcaption style="font-size: 14px; color: #4A443C;"><strong>[Name], [Agency]</strong><br><span style="color: #8A8475;">SEO Lead</span></figcaption>
+        </figure>
+        <figure style="margin: 0; border-top: 2px solid #1B1815; padding-top: 24px;">
+          <blockquote style="font-family: 'Newsreader', serif; font-size: 21px; line-height: 1.45; margin: 0 0 22px;">&ldquo;Real articles on real local sites. Our clients can actually read the placement &mdash; that&rsquo;s rare.&rdquo;</blockquote>
+          <figcaption style="font-size: 14px; color: #4A443C;"><strong>[Name], [Agency]</strong><br><span style="color: #8A8475;">Founder</span></figcaption>
+        </figure>
+        <figure style="margin: 0; border-top: 2px solid #1B1815; padding-top: 24px;">
+          <blockquote style="font-family: 'Newsreader', serif; font-size: 21px; line-height: 1.45; margin: 0 0 22px;">&ldquo;We moved three clients onto the Agency plan and the per-article price made it an easy call.&rdquo;</blockquote>
+          <figcaption style="font-size: 14px; color: #4A443C;"><strong>[Name], [Agency]</strong><br><span style="color: #8A8475;">Director of Search</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: #EFE9DB; border-bottom: 1px solid #1B1815;">
+    <div style="max-width: 860px; margin: 0 auto; padding: 80px 32px;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C2402E; margin-bottom: 16px;">Questions</div>
+        <h2 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 42px; line-height: 1.05; letter-spacing: -0.01em; margin: 0;">Everything agencies ask first.</h2>
+      </div>
+      <div>
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div style="border-bottom: 1px solid #D6CEBC;">
+            <button onClick="{{ f.onToggle }}" style="width: 100%; background: transparent; border: none; cursor: pointer; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; text-align: left;">
+              <span style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 600; color: #1B1815;">{{ f.q }}</span>
+              <span style="font-family: 'Libre Caslon Display', serif; font-size: 26px; color: #C2402E; line-height: 1; flex-shrink: 0;">{{ f.sign }}</span>
+            </button>
+            <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding: 0 0 26px; max-width: 60ch;">
+                <p style="font-size: 16px; line-height: 1.65; color: #4A443C; margin: 0;">{{ f.a }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section style="background: #C2402E; color: #fff;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 76px 32px; text-align: center;">
+      <h2 style="font-family: 'Libre Caslon Display', serif; font-weight: 400; font-size: 52px; line-height: 1.04; letter-spacing: -0.01em; margin: 0 0 20px;">Open your free desk today.</h2>
+      <p style="font-family: 'Newsreader', serif; font-size: 19px; color: #FCE3DC; margin: 0 0 32px;">Set up a workspace, add your first client, and buy your first links in minutes.</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+        <a href="#" style="background: #1B1815; color: #fff; text-decoration: none; padding: 16px 32px; border-radius: 2px; font-size: 16px; font-weight: 700;" style-hover="background: #000;">Create a free account</a>
+        <a href="#packages" style="background: transparent; color: #fff; text-decoration: none; padding: 15px 30px; border-radius: 2px; font-size: 16px; font-weight: 600; border: 1px solid rgba(255,255,255,0.6);" style-hover="background: rgba(255,255,255,0.12);">View packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1B1815; color: #B7AE99;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 64px 32px 40px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px;">
+      <div>
+        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px;">
+          <span style="font-family: 'Libre Caslon Display', serif; font-size: 26px; color: #F2ECDD;">CityDesk</span>
+          <span style="display: inline-block; width: 1px; height: 20px; background: #4A443C; transform: translateY(3px);"></span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #C2402E;">Marketing</span>
+        </div>
+        <p style="font-family: 'Newsreader', serif; font-size: 15.5px; line-height: 1.6; color: #8A8475; max-width: 30em; margin: 0;">Hyperlocal authority backlinks, published as real local news across the CityDesk network of city papers.</p>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6457; margin-bottom: 16px;">Product</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14.5px; line-height: 2.1;">
+          <li><a href="#how" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">How it works</a></li>
+          <li><a href="#packages" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">Backlink packages</a></li>
+          <li><a href="#cities" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">Cities</a></li>
+          <li><a href="#directory" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">Business directory</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6457; margin-bottom: 16px;">Company</div>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14.5px; line-height: 2.1;">
+          <li><a href="#" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">About</a></li>
+          <li><a href="#" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">Editorial standards</a></li>
+          <li><a href="#faq" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">FAQ</a></li>
+          <li><a href="#" style="color: #B7AE99; text-decoration: none;" style-hover="color: #fff;">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6457; margin-bottom: 16px;">Get started</div>
+        <a href="#" style="display: inline-block; background: #C2402E; color: #fff; text-decoration: none; padding: 11px 20px; border-radius: 2px; font-size: 14px; font-weight: 600; margin-bottom: 14px;" style-hover="background: #9E3122;">Create free account</a>
+        <div><a href="#" style="color: #B7AE99; text-decoration: none; font-size: 14.5px;" style-hover="color: #fff;">Sign in</a></div>
+      </div>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 22px 32px; border-top: 1px solid #2E2922; display: flex; align-items: center; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #6B6457;">
+      <span>&copy; 2026 CityDesk Marketing. All rights reserved.</span>
+      <span style="display: flex; gap: 24px;"><a href="#" style="color: #6B6457; text-decoration: none;" style-hover="color: #B7AE99;">Privacy</a><a href="#" style="color: #6B6457; text-decoration: none;" style-hover="color: #B7AE99;">Terms</a></span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1200, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  state = { qty: 50, openFaq: 0 };
+
+  renderVals() {
+    const PER = 12;
+    const qty = this.state.qty;
+    const fmt = (n) => "$" + n.toLocaleString("en-US");
+
+    const faqData = [
+      { q: "Are these real articles on real websites?", a: "Yes. Every link is placed inside a genuine, original article published on a live CityDesk city newspaper with real hyperlocal coverage across seven sections — not a private blog network or a thin link farm." },
+      { q: "Do the links stay live permanently?", a: "Yes. Placements are permanent. Once an article is published it stays on the site and in your dashboard — there are no monthly rentals and nothing expires when your bundle ends." },
+      { q: "Can I set the target URL and anchor text?", a: "You set the target URL and preferred anchor for each order. Our editors place it contextually inside an on-topic article so it reads naturally and passes editorial review." },
+      { q: "How does this work for an agency with many clients?", a: "Each client gets its own white-labeled desk inside your account. Buy bundles or à la carte per client, track every placement in one dashboard, and export clean reports with live URLs and publish dates." },
+      { q: "How fast do articles get published?", a: "Bundles publish on a steady cadence — typically two to three articles per week — so links land naturally over time rather than all at once. À la carte orders enter the same publishing queue." },
+      { q: "How is the business directory different from backlinks?", a: "The directory is a separate annual product: a permanent listing for a business at $89/year, or $149/year for a Featured listing that also runs a banner in the sidebar of article pages across the paper. Backlinks are the editorial placements; the directory is an always-on presence." }
+    ];
+
+    const faqs = faqData.map((f, i) => ({
+      q: f.q,
+      a: f.a,
+      isOpen: this.state.openFaq === i,
+      sign: this.state.openFaq === i ? "\u2013" : "+",
+      onToggle: () => this.setState((s) => ({ openFaq: s.openFaq === i ? -1 : i }))
+    }));
+
+    return {
+      qty,
+      qtyLabel: qty + (qty === 1 ? " article" : " articles"),
+      qtyTotal: fmt(qty * PER),
+      onQty: (e) => this.setState({ qty: parseInt(e.target.value, 10) }),
+      faqs
+    };
+  }
+}
+</script>
+</body>
+</html>
