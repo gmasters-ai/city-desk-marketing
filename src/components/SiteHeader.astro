@@ -5,10 +5,6 @@ import Logo from './Logo.astro';
   <div class="container inner">
     <Logo />
 
-    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span><span></span>
-    </button>
-
     <nav id="main-nav" aria-label="Main navigation">
       <a href="#how">How it works</a>
       <a href="#packages">Packages</a>
@@ -21,6 +17,10 @@ import Logo from './Logo.astro';
       <a href="https://app.citydeskmarketing.com/auth/login" class="signin">Sign in</a>
       <a href="https://app.citydeskmarketing.com/auth/register" class="cta-btn">Create free account</a>
     </div>
+
+    <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -134,8 +134,7 @@ import Logo from './Logo.astro';
       border-bottom: 1px solid var(--rule);
     }
     nav a:last-child { border-bottom: none; }
-    .actions { gap: 12px; }
-    .signin { display: none; }
+    .actions { display: none; }
   }
 
   @media (max-width: 480px) {
