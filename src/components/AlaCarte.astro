@@ -14,7 +14,7 @@
     <div class="est-label">Estimated total</div>
     <div class="total" id="alc-total">$550</div>
     <div class="per-note" id="alc-per">$11 / article</div>
-    <a href="#" class="cta" id="alc-cta">Order 50 articles</a>
+    <a href="https://app.citydeskmarketing.com/auth/register?plan=custom&articles=50" class="cta" id="alc-cta">Order 50 articles</a>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
   const label   = document.getElementById('alc-label')!;
   const total   = document.getElementById('alc-total')!;
   const perNote = document.getElementById('alc-per')!;
-  const cta     = document.getElementById('alc-cta')!;
+  const cta     = document.getElementById('alc-cta') as HTMLAnchorElement;
 
   const fmt    = (n: number) => '$' + n.toLocaleString('en-US');
   const plural = (n: number) => n + (n === 1 ? ' article' : ' articles');
@@ -42,6 +42,7 @@
     total.textContent   = fmt(q * rate);
     perNote.textContent = `$${rate} / article`;
     cta.textContent     = 'Order ' + plural(q);
+    cta.href            = 'https://app.citydeskmarketing.com/auth/register?plan=custom&articles=' + q;
   }
 
   range.addEventListener('input', sync);
